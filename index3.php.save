@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Shanna's Sporting Goods</title>
+</head>
+<body>
+<?php
+include 'connectdb.php';
+?>
+<h1>Welcome to Shanna's Sporting Goods</h1>
+<h2>Our Customers</h2>
+<form action="getproducts.php" method="post">
+<?php
+   include 'getdata.php';
+?>
+<input type="submit" value="Get Products">
+<input type="radio" name="radio" id="sort description by ascending order">sort description by ascending order<br>
+<input type="radio" name="radio" id="sort description by descending order">sort description by descending order<br>
+<input type="radio" name="radio" id="sort price by ascending order">sort price by ascending order<br>
+<input type="radio" name="radio" id="sort price by descending order">sort price by descending order<br>
+<?js
+   include 'sortdata.js';
+?>
+</form>
+<?php
+mysqli_close($connection);
+?> 
+</body>
+</html> 
